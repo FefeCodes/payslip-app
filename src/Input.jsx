@@ -1,5 +1,5 @@
 export default function Input({
-  type = "text",
+  type,
   label,
   placeholder,
   value,
@@ -11,6 +11,7 @@ export default function Input({
       {label && <label htmlFor={name}>{label}</label>}
 
       <input
+        className="p-2 border rounded-md w-full"
         id={name}
         type={type}
         name={name}

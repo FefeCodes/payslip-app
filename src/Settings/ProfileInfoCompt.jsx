@@ -9,9 +9,24 @@ export default function ProfileInfoCompt() {
       </div>
 
       <div>
-        <Input />
-        <Input />
-        <Input />
+        <Input
+          type="first name"
+          value={firstName}
+          name="first name"
+          placeholder="First Name"
+        />
+        <Input
+          type="last name"
+          value={lastName}
+          name="last name"
+          placeholder="Last Name"
+        />
+        <Input
+          type="email"
+          value={email}
+          name="email"
+          placeholder="Email Address"
+        />
       </div>
     </div>
   );

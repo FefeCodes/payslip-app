@@ -4,6 +4,8 @@ import Footer from "../Footer";
 import SideBar from "../SideBar";
 
 export default function Dashboard() {
+  const { user } = useAuth();
+
   return (
     <div>
       <SideBar />

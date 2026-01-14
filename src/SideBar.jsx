@@ -1,41 +1,59 @@
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
+
 export default function SideBar() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <div>
       <div>
-        <img src="" alt="" />
+        <img src="" alt="logo" />
       </div>
       <div>
-        <div>
-          <img src="" alt="" />
+        <NavLink to="/dashboard">
+          <img src="" alt="Dashboard" />
           <p>Dashboard</p>
-        </div>
-        <div>
-          <img src="" alt="" />
+        </NavLink>
+
+        <NavLink to="/employees">
+          <img src="" alt="Employees" />
           <p>Employees</p>
-        </div>
-        <div>
+        </NavLink>
+
+        <NavLink to="/payslips">
           <img src="" alt="" />
           <p>Payslips</p>
-        </div>
-        <div>
+        </NavLink>
+
+        <NavLink to="/audit-logs">
           <img src="" alt="" />
           <p>Audit Logs</p>
-        </div>
-        <div>
+        </NavLink>
+
+        <NavLink to="/settings">
           <img src="" alt="" />
           <p>Settings</p>
-        </div>
+        </NavLink>
       </div>
+
       <div>
         <div>
           <img src="" alt="" />
           <p>Light Mode</p>
         </div>
+
         <div>
           <img src="" alt="" />
           <p>Profile</p>
         </div>
-        <div>
+
+        <div onClick={handleLogout}>
           <img src="" alt="" />
           <p>Log Out</p>
         </div>

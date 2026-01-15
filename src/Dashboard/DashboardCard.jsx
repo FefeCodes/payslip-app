@@ -1,9 +1,9 @@
-export default function DashboardCard() {
+export default function DashboardCard({ title, count }) {
   return (
     <div>
       <div>
-        <p>Total Employees</p>
-        <p>8</p>
+        <p>{title}</p>
+        <p>{count}</p>
       </div>
       <div>
         <img src="" alt="" />

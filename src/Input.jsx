@@ -1,5 +1,5 @@
 export default function Input({
-  type,
+  type = "text",
   label,
   placeholder,
   value,
@@ -7,17 +7,21 @@ export default function Input({
   name,
 }) {
   return (
-    <div className="input-group">
-      {label && <label htmlFor={name}>{label}</label>}
+    <div className="flex flex-col gap-1 w-full">
+      {label && (
+        <label htmlFor={name} className="text-sm font-medium text-gray-700">
+          {label}
+        </label>
+      )}
 
       <input
-        className="p-2 border rounded-md w-full"
         id={name}
         type={type}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        className="border border-gray-300 rounded p-2 focus:outline-none focus:border-blue-500 transition-colors w-full"
       />
     </div>
   );

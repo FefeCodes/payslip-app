@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import Input from "./Input";
 
@@ -64,9 +64,11 @@ export default function Login() {
           <button type="submit" disabled={isLoading}>
             {isLoading ? "Signing in..." : "Sign In"}
           </button>
-          <div>
+          <div className="flex justify-center gap-2 mt-2">
             <p>Don't have an account?</p>
-            <p>Sign up</p>
+            <Link to="signup" className="text-blue-600 hover:underline">
+              Sign up
+            </Link>
           </div>
         </form>
       </div>
